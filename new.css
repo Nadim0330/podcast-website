@@ -1,0 +1,230 @@
+:root {
+
+    /**
+     * colors
+     */
+  
+    --flourescent-blue: hsl(178, 100%, 49%);
+    --heliotrope-gray: hsl(253, 15%, 70%);
+    --russian-violet: hsl(252, 80%, 16%);
+    --dark-violet: hsl(252, 100%, 12%);
+    --space-cadet: hsl(247, 43%, 20%);
+    --blue-ryb: hsl(221, 100%, 50%);
+    --white: hsl(0, 0%, 100%);
+  
+    --gradient: linear-gradient(to right, var(--flourescent-blue), var(--blue-ryb));
+  
+    /**
+     * typography
+     */
+  
+    --ff-josefin: 'Josefin sans', sans-serif;
+  
+    --fs-1: 25px;
+    --fs-2: 18px;
+    --fs-3: 17px;
+    --fs-4: 15px;
+  
+    --fw-500: 500;
+    --fw-700: 700;
+  
+    /**
+     * transition
+     */
+  
+    --transition: 0.25s ease-in-out;
+  
+    /**
+     * spacing
+     */
+  
+    --section-padding: 30px;
+  
+  }
+  
+  
+  
+  
+  
+  /*-----------------------------------*\
+    #RESET
+  \*-----------------------------------*/
+  
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  li { list-style: none; }
+  
+  a { text-decoration: none; }
+  
+  a,
+  img,
+  span,
+  input,
+  button,
+  ion-icon { display: block; }
+  
+  button {
+    font: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input {
+    font: inherit;
+    border: none;
+    width: 100%;
+  }
+  
+  :focus { outline-offset: 4px; }
+  
+  html {
+    font-family: var(--ff-josefin);
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background: var(--dark-violet);
+    color: var(--white);
+  }
+  .btn {
+    color: var(--white);
+    font-size: var(--fs-4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 9px 10px;
+    border-radius: 4px;
+  }
+  
+  .btn-primary {
+    background: var(--gradient);
+    background-size: 500%;
+    background-position: right;
+    padding: 15px 25px;
+    gap: 8px;
+    transition: background var(--transition);
+  }
+  
+  .btn-primary:is(:hover, :focus) { background-position: left; }
+  
+  .btn-primary > ion-icon { font-size: 18px; }
+  
+  .btn-primary > span { margin-top: 3px; }
+  
+  .container { padding: 0 15px; }
+  
+  .h3 {
+    color: var(--white);
+    font-size: var(--fs-2);
+    line-height: 1.5;
+  }
+  
+  header {
+    position: fixed;
+    top: -90px;
+    left: 0;
+    width: 100%;
+    padding-block: 15px;
+    box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.5);
+    background: var(--russian-violet);
+    transition: var(--transition);
+    z-index: 4;
+  }
+  
+  header.active { top: 0; }
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-toggle-btn {
+    color: var(--white);
+    font-size: 35px;
+    border-radius: 4px;
+  }
+  
+  .nav-toggle-btn ion-icon { --ionicon-stroke-width: 40px; }
+  
+  .navbar {
+    position: fixed;
+    bottom: -270px;
+    left: 0;
+    width: 100%;
+    background: var(--russian-violet);
+    border-radius: 8px 8px 0 0;
+    padding: 30px 10px 10px;
+    box-shadow: 0 -1px 10px hsla(0, 0%, 0%, 0.5);
+    z-index: 2;
+    visibility: hidden;
+    transition: 0.15s ease-in;
+  }
+  
+  .navbar.active {
+    bottom: 0;
+    visibility: visible;
+    transition: 0.25s ease-out;
+  }
+  
+  .navbar-list {
+    padding-bottom: 5px;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.05);
+    margin-bottom: 5px;
+  }
+  
+  .navbar::before {
+    content: "";
+    position: absolute;
+    top: 13px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 4px;
+    background: hsla(0, 0%, 100%, 0.05);
+    border-radius: 5px;
+  }
+  
+  .navbar-link {
+    color: var(--white);
+    font-size: var(--fs-4);
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .navbar-link:is(:hover, :focus) { background: hsla(0, 0%, 100%, 0.1); }
+  
+  .navbar-actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .navbar-btn {
+    color: var(--white);
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 4px;
+  }
+  
+  .navbar-btn:is(:hover, :focus),
+  .navbar-actions .btn:is(:hover, :focus) { background: hsla(0, 0%, 100%, 0.1); }
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    transition: var(--transition);
+  }
+  
+  .overlay.active {
+    pointer-events: all;
+    background: hsla(0, 0%, 0%, 0.7);
+  }

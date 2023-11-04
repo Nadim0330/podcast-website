@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socail-Media Podcasts</title>
+
+    <style>
+        :root {
+
+/**
+ * colors
+ */
+
+--flourescent-blue: hsl(178, 100%, 49%);
+--heliotrope-gray: hsl(253, 15%, 70%);
+--russian-violet: hsl(252, 80%, 16%);
+--dark-violet: hsl(252, 100%, 12%);
+--space-cadet: hsl(247, 43%, 20%);
+--blue-ryb: hsl(221, 100%, 50%);
+--white: hsl(0, 0%, 100%);
+
+--gradient: linear-gradient(to right, var(--flourescent-blue), var(--blue-ryb));
+
+/**
+ * typography
+ */
+
+--ff-josefin: 'Josefin sans', sans-serif;
+
+--fs-1: 25px;
+--fs-2: 18px;
+--fs-3: 17px;
+--fs-4: 15px;
+
+--fw-500: 500;
+--fw-700: 700;
+
+/**
+ * transition
+ */
+
+--transition: 0.25s ease-in-out;
+
+/**
+ * spacing
+ */
+
+--section-padding: 30px;
+
+}
+        body {
+            background-color: var(--russian-violet);
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        } */
+
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+            color: whitesmoke;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .search-bar {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    #search-input {
+        padding: 10px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    #search-button {
+        padding: 10px 20px;
+        background-color: #0074d9;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-left: 10px;
+    }
+
+    #search-button:hover {
+        background-color: #0056a0;
+    }
+        .playlist {
+            list-style: none;
+            padding: 10;
+            display: flex;
+            flex-wrap: wrap; /* Allows episodes to wrap to the next line */
+            justify-content: center; /* Center episodes horizontally */
+        }
+
+        .episode {
+            font-size: 18px;
+            margin: 0;
+            padding: 20px 20px;
+            border-bottom: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 500px;
+            margin: 10px;
+            transition: 2s;
+        }
+
+     /* Hover effect on episodes */
+        .episode:hover {
+            background-color: lightsalmon;
+            cursor: pointer;
+            transform: translate3d(10px);
+
+            
+        }
+        .navbar {
+            background-color: none;
+            color: #fff;
+            padding-right: 110px;
+            text-align: right;
+            
+        }
+
+        .navbar a {
+
+            text-decoration: none;
+            color: #fff;
+            margin: 5px;
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 20px;
+
+        }
+        .episode-image {
+            width: 100%; /* 100% of the container width */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px;}
+        
+    </style>
+</head>
+<body>
+    <h1>Explore Socail-Media Podcasts</h1>
+    <div class="navbar">
+        <a href="genre.html"><b>Back To Genre</b></a>
+    </div>
+    <main>
+        <ul class="playlist">
+            <li class="episode">
+                <img src="episode1.jpg" alt="Episode 1" class="episode-image"> 
+                <div class="episode-info">
+                    <h2>Episode 1 Title</h2>
+                    <p>Description of Episode 1.</p>
+                    <p>Release Date: March 10, 2023</p>
+                    <p>Duration: 35:15</p>
+                </div>
+                <audio controls>
+                    <source src="episodes/episode1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <!-- <div class="episode-actions">
+                    <button class="like-button" id="episode10-like-button">
+                        <span class="heart-icon">&hearts;</span>
+                    </button>
+                </div>
+            </li> -->
+            
+            <li class="episode">
+                <img src="episode2.jpg" alt="Episode 02" class="episode-image">
+                <div class="episode-info">
+                    <h2>Episode 2 Title</h2>
+                    <p>Description of Episode 2.</p>
+                    <p>Release Date: February 15, 2023</p>
+                    <p>Duration: 25:30</p>
+                </div>
+                <audio controls>
+                    <source src="episode2.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <button class="like-button">Like</button>
+            </li>
+            <li class="episode">
+                <img src="episode3.jpg" alt="Episode 03" class="episode-image">
+                <div class="episode-info">
+                    <h2>Episode 3 Title</h2>
+                    <p>Description of Episode 3.</p>
+                    <p>Release Date: March 10, 2023</p>
+                    <p>Duration: 35:15</p>
+                </div>
+                <audio controls>
+                    <source src="episode3.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </li>
+            <li class="episode">
+                <img src="episode4.jpg" alt="Episode 04" id="episode4" class="episode-image">
+                <div class="episode-info">
+                    <h2>Episode 4 Title</h2>
+                    <p>Description of Episode 4.</p>
+                    <p>Release Date: March 10, 2023</p>
+                    <p>Duration: 35:15</p>
+                </div>
+                <audio controls>
+                    <source src="episode4.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </li>
+            <li class="episode">
+                <img src="episode5.jpg" alt="Episode 05" class="episode-image">
+                <div class="episode-info">
+                    <h2>Episode 5 Title</h2>
+                    <p>Description of Episode 5.</p>
+                    <p>Release Date: March 10, 2023</p>
+                    <p>Duration: 35:15</p>
+                </div>
+                <audio controls>
+                    <source src="episode5.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </li>
+            <li class="episode">
+                <img src="episode6.jpg" alt="Episode 06" class="episode-image">
+                <div class="episode-info">
+                    <h2>Episode 6 Title</h2>
+                    <p>Description of Episode 6.</p>
+                    <p>Release Date: March 10, 2023</p>
+                    <p>Duration: 35:15</p>
+                </div>
+                <audio controls>
+                    <source src="episode6.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </li>
+            <li class="episode">
+                <img src="episode7.jpg" alt="Episode 07" class="episode-image">
+                <div class="episode-info">
+                    <h2>Episode 7 Title</h2>
+                    <p>Description of Episode 7.</p>
+                    <p>Release Date: March 10, 2023</p>
+                    <p>Duration: 35:15</p>
+                </div>
+                <audio controls>
+                    <source src="episode7.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </li>
+            <li class="episode">
+                <img src="episode8.jpg" alt="Episode 08" class="episode-image">
+                <div class="episode-info">
+                    <h2>Episode 8 Title</h2>
+                    <p>Description of Episode 8.</p>
+                    <p>Release Date: March 10, 2023</p>
+                    <p>Duration: 35:15</p>
+                </div>
+                <audio controls>
+                    <source src="episode8.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </li>
+            
+        </ul>
+        <br>
+        <!-- <ul>
+            <li class="view-all">
+                <center><button style="color: blue;">View All</button></center>
+            </li>
+        </ul> -->
+    </main>
+    <script>
+        
+    // Sample episode data
+    let currentAudio = null; // Keep track of the currently playing audio element
+
+// Function to load episode data from a JSON file
+async function loadEpisodeData() {
+    try {
+        const response = await fetch('episode-data.json');
+        const data = await response.json();
+        return data.episodes;
+    } catch (error) {
+        console.error('Error loading episode data:', error);
+        return [];
+    }
+}
+
+// Function to display episodes
+function displayEpisodes(episodes) {
+    const playlist = document.querySelector('.playlist');
+    playlist.innerHTML = ''; // Clear the current playlist
+
+    if (episodes.length === 0) {
+        playlist.innerHTML = 'No matching episodes found.';
+    } else {
+        episodes.forEach(episode => {
+            const li = document.createElement('li');
+            li.className = 'episode';
+            li.innerHTML = `
+                <div class="episode-info">
+                    <h2>${episode.title}</h2>
+                    <p>${episode.description}</p>
+                </div>
+                <audio controls>
+                    <source src="${episode.audio}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            `;
+            playlist.appendChild(li);
+        });
+    }
+}
+
+// Function to handle the search
+function searchEpisodes(episodes, searchTerm) {
+    const results = episodes.filter(episode =>
+        episode.title.toLowerCase().includes(searchTerm) || episode.description.toLowerCase().includes(searchTerm)
+    );
+
+    displayEpisodes(results);
+
+    // Add event listeners to play audio on episode selection
+    results.forEach((episode, index) => {
+        const audio = document.querySelectorAll('audio')[index];
+        audio.addEventListener('play', () => {
+            if (currentAudio && currentAudio !== audio) {
+                // Pause the previously playing audio if different
+                currentAudio.pause();
+            }
+            currentAudio = audio;
+        });
+    });
+}
+
+// Add an event listener to the search button
+document.getElementById('search-button').addEventListener('click', async () => {
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+    const episodes = await loadEpisodeData();
+    searchEpisodes(episodes, searchTerm);
+});
+
+// Load initial episodes
+loadEpisodeData()
+    .then(episodes => displayEpisodes(episodes))
+    .catch(error => console.error('Error loading episodes:', error));
+// JavaScript code
+document.addEventListener("DOMContentLoaded", function () {
+    const likeButton = document.getElementById("episode1-like-button");
+    const heartIcon = likeButton.querySelector(".heart-icon");
+    let isLiked = false;
+
+    likeButton.addEventListener("click", function () {
+        if (isLiked) {
+            // Remove the liked status
+            heartIcon.style.color = "black"; // Change the heart color back to black
+        } else {
+            // Set the liked status
+            heartIcon.style.color = "red"; // Change the heart color to red when liked
+        }
+
+        isLiked = !isLiked;
+    });
+});
+
+    </script>
+</body>
+</html>

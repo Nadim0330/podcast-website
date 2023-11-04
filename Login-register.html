@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login & Registration Form</title>
+  <!---Custom CSS File--->
+  <link rel="stylesheet" href="Log.css">
+</head>
+<body>
+  <header>
+    <!-- <div class="navbar">
+      <li>
+        <a href="index.html" style="color: white;">Home</a>
+      </li> -->
+    </div>
+  </header>
+  <div class="container">
+    <input type="checkbox" id="check">
+    <div class="login form">
+      <header>Login</header>
+      <form action="server.js">
+        <input type="text" placeholder="Enter your email" id="username"  required>
+        <input type="password" placeholder="Enter your password" id="password" required>
+        <a href="#">Forgot password?</a>
+        <input type="button" class="button" id="login-button" value="Login" >
+      </form>
+      <div class="signup">
+        <span class="signup" style="color: white;">Don't have an account?
+         <label for="check">Signup</label>
+        </span>
+      </div>
+    </div>
+    <div class="registration form">
+      <header>Signup</header>
+      <form action="server.js">
+        <input type="text" placeholder="Enter your email">
+        <input type="password" placeholder="Create a password">
+        <input type="password" placeholder="Confirm your password">
+        <input type="button" class="button" value="Signup">
+      </form>
+      <div class="signup">
+        <span class="signup" style="color: white;">Already have an account?
+         <label for="check">Login</label>
+        </span>
+      </div>
+    </div>
+  </div>
+ 
+
+<script>
+  const loginForm = document.getElementById('login form');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const loginButton = document.getElementById('login-button');
+
+        // Add a submit event listener to the form
+        loginButton.addEventListener('click', function() {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the entered username and password
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+
+            // You can perform authentication here, e.g., by sending a request to your server
+
+            // Assuming the login is successful, redirect to another page
+            if (username == 'Yash' && password == '123') {
+              // loginContainer.style.display = 'none';
+              //   content.style.display = 'block';
+                window.location.href = 'index.html'; // Replace 'welcome.html' with your desired page
+            } else {
+                alert('Login failed. Please check your username and password.');
+            }
+        
+    
+   
+
+    // Add a click event listener to the login button
+    // loginButton.addEventListener('click', function() {
+    //     // Redirect to the index page
+    //     window.location.href = 'index.html';
+    // });
+  });
+
+  </script>
+</body>
+</html>

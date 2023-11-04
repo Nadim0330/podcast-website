@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Podcast Playlist</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="browse.html">Browse</a>
+        <a href="genre.html">Genre</a>
+    </div>
+    <h1>Podcast Playlist</h1>
+    
+    <ul id="playlist">
+        <!-- Podcasts will be dynamically loaded from the JSON file -->
+    </ul>
+
+    <audio controls id="audioPlayer">
+        <source src="episodes/episode1.mp3" type="audio/mpeg">
+    </audio>
+
+    <h2>Listening History</h2>
+    <ul id="history">
+        <!-- Listening history will be displayed here -->
+    </ul>
+    <script>
+    const playlist = document.querySelector('.playlist');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const history = document.getElementById('history');
+
+        // Sample episode data
+        let currentAudio = null; // Keep track of the currently playing audio element
+        const playedEpisodes = []; // Store played episodes in an array
+
+        // Function to load episode data from a JSON file
+        async function loadEpisodeData() {
+            try {
+                const response = await fetch('episode-data.json');
+                const data = await response.json();
+                return data.episodes;
+            } catch (error) {
+                console.error('Error loading episode data:', error);
+                return [];
+            }
+        }
+
+        // Function to display episodes
+        function displayEpisodes(episodes) {
+            playlist.innerHTML = ''; // Clear the current playlist
+
+            if (episodes.length === 0) {
+                playlist.innerHTML = 'No matching episodes found.';
+            } else {
+                episodes.forEach((episode, index) => {
+                    const li = document.createElement('li');
+                    li.className = 'episode';
+                    li.innerHTML = `
+                        <div class="episode-info">
+                            <h2>${episode.title}</h2>
+                            <p>${episode.description}</p>
+                        </div>
+                        <audio controls>
+                            <source src="${episode.audio}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    `;
+                    playlist.appendChild(li);
+
+                    // Add event listener to play audio and update history
+                    const audio = li.querySelector('audio');
+                    audio.addEventListener('play', () => {
+                        if (currentAudio && currentAudio !== audio) {
+                            // Pause the previously playing audio if different
+                            currentAudio.pause();
+                        }
+                        currentAudio = audio;
+
+                        // Add the episode to the listening history
+                        addToHistory(episode.title);
+                    });
+                });
+            }
+        }
+
+        // Function to handle the search
+        function searchEpisodes(episodes, searchTerm) {
+            const results = episodes.filter(episode =>
+                episode.title.toLowerCase().includes(searchTerm) || episode.description.toLowerCase().includes(searchTerm)
+            );
+
+            displayEpisodes(results);
+        }
+
+        // Function to add an episode to the listening history
+        function addToHistory(episodeTitle) {
+            playedEpisodes.push(episodeTitle);
+            displayHistory();
+        }
+
+        // Function to display the listening history
+        function displayHistory() {
+            history.innerHTML = ''; // Clear the current history
+
+            playedEpisodes.forEach(episodeTitle => {
+                const historyItem = document.createElement('li');
+                historyItem.textContent = episodeTitle;
+                history.appendChild(historyItem);
+            });
+        }
+
+        // Add an event listener to the search button
+        document.getElementById('search-button').addEventListener('click', async () => {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const episodes = await loadEpisodeData();
+            searchEpisodes(episodes, searchTerm);
+        });
+
+        // Load initial episodes
+        loadEpisodeData()
+            .then(episodes => displayEpisodes(episodes))
+            .catch(error => console.error('Error loading episodes:', error));
+    </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Podcasttttt</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+    
+  
+    /* Internal CSS for the Contact page */
+    body {
+      background-color: var(--russian-violet);
+      font-family: 'Josefin Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+            position: fixed;
+    top: -90px;
+    left: 0;
+    width: 100%;
+    padding-block: 15px;
+    box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.5);
+    background: var(--russian-violet);
+    transition: var(--transition);
+
+    }
+
+    .contact {
+      background-color: var(--russian-violet);
+      width: 600px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      margin-top: 20px;
+    }
+
+    .contact .section-title {
+      font-size: 24px;
+    }
+
+    .contact .section-text {
+      color: #555;
+    }
+
+    .contact-form {
+      margin-top: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 5px;
+      font-size: 16px;
+    }
+
+    button.btn-primary {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  
+</style>
+</head>
+<body id="top">
+  <header class="active" data-header>
+    <div class="container">
+      <div class="overlay" data-overlay></div>
+      <a href="#" class="logo">
+        <img src="./assets/images/logo.svg" alt="Micro logo">
+      </a>
+      <button class="nav-toggle-btn" data-nav-toggle-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link">Home</a>
+          </li>
+          <li class="navbar-item">
+            <a href="browse.html" class="navbar-link">Browse</a>
+          </li>
+          <li class="navbar-item">
+            <a href="genre.html" class="navbar-link">Genre</a>
+          </li>
+          <li class="navbar-item">
+            <a href="contact.html" class="navbar-link">Contact</a>
+          </li>
+          <li class="navbar-item">
+            <a href="Login-register.html" class="navbar-link">Login</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <article class="container">
+      <section class="contact" id="contact">
+        <h1 class="h1 section-title">Contact Us</h1>
+        
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </section>
+    </article>
+  </main>
+  <footer>
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.svg" alt="Micro logo">
+          </a>
+          <p class="footer-text">
+           "Let's Connect – We're Here to Listen and Assist You!"
+          </p>
+        </div>
+        <ul class="footer-list">
+          <li>
+            <p class="footer-link-title">Start A Conversation</p>
+          </li>
+          <li>
+            <a href="mailto:hello@micro.com" class="footer-link">hello@micro.com</a>
+          </li>
+          <li>
+            <a href="tel:+0123454678" class="footer-link">+01234 54678</a>
+          </li>
+          <li>
+            <a href="tel:+15780346789" class="footer-link">+1 (578) 034-6789</a>
+          </li>
+        </ul>
+        <div class="social-list-box">
+          <p class="social-title">Follow Us On:</p>
+          <ul class="social-list">
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-soundcloud"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-apple"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a href="#top" class="go-top" data-go-top>
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </a>
+  <script src="./assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

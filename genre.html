@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Podcasttttt</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Genre Page</title>
+
+    <style>
+        :root {
+
+/**
+ * colors
+ */
+
+--flourescent-blue: hsl(178, 100%, 49%);
+--heliotrope-gray: hsl(253, 15%, 70%);
+--russian-violet: hsl(252, 80%, 16%);
+--dark-violet: hsl(252, 100%, 12%);
+--space-cadet: hsl(247, 43%, 20%);
+--blue-ryb: hsl(221, 100%, 50%);
+--white: hsl(0, 0%, 100%);
+
+--gradient: linear-gradient(to right, var(--flourescent-blue), var(--blue-ryb));
+
+/**
+ * typography
+ */
+
+--ff-josefin: 'Josefin sans', sans-serif;
+
+--fs-1: 25px;
+--fs-2: 18px;
+--fs-3: 17px;
+--fs-4: 15px;
+
+--fw-500: 500;
+--fw-700: 700;
+
+/**
+ * transition
+ */
+
+--transition: 0.25s ease-in-out;
+
+/**
+ * spacing
+ */
+
+--section-padding: 30px;
+
+}
+        /* Internal CSS styles go here */
+        body {
+            background-color: var(--russian-violet);
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .genre-card {
+            background-color: lightpink;
+            border-radius: 10px;
+            /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .genre-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .genre-card h2 {
+            font-size: 24px;
+            color: black;
+            margin: 10px 0;
+            margin-top: 50%;
+            text-align: center;
+            align-content: center;
+        }
+
+        .genre-card p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .genre-card a {
+            color: #0074d9;
+            text-decoration: none;
+            font-weight: bold;
+
+        }
+        .navbar {
+    background-color: none; /* Replace 'none' with the desired background color or 'transparent' */
+    color: #fff;
+    text-align: right; /* Align the text to the right side */
+    padding: 10px; /* Add some padding for spacing */
+    position: absolute;
+    top: 10%;
+    right: 2%;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 10px; /* Add margin for spacing between links */
+    display: inline-block;
+}
+
+    </style>
+</head>
+<body>
+    <!-- <header class="active" data-header>
+        <div class="container">
+          <div class="overlay" data-overlay></div>
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.svg" alt="Micro logo">
+          </a> -->
+    
+
+    <h1>Explore Your Favorite Genre</h1>
+    <main>
+        <div class="navbar">
+            <ul class="nav-links" style="list-style: none; display: flex; padding: 0;">
+                <li style="margin-right: 20px;"><a href="index.html" style="text-decoration: none; color: #fff;">Home</a></li>
+                <li style="margin-right: 20px;"><a href="browse.html" style="text-decoration: none; color: #fff;">Browse</a></li>
+                <li style="margin-right: 20px;"><a href="playlist.html" style="text-decoration: none; color: #fff;">Playlists</a></li>
+                <li style="margin-right: 20px;"><a href="contact.html" style="text-decoration: none; color: #fff;">Contact</a></li>
+          
+              </ul>
+        </div>
+            
+    
+            <!-- Add more links as needed -->
+        </div>
+        <div class="genre-card" onclick="openGenre('Geo-Political')" ;">
+            <h2>Geo-Political</h2>
+
+        </div>
+
+        <div class="genre-card" onclick="openGenre('Mythological')">
+            <h2>Mythological</h2>
+            
+        </div>
+
+        <div class="genre-card" onclick="openGenre('Horror')">
+            <h2>Horror</h2>
+            
+        </div>
+
+        <div class="genre-card" onclick="openGenre('Social-Media')">
+            <h2>Social Media</h2>
+            
+        </div>
+
+        <div class="genre-card" onclick="openGenre('Sports')">
+            <h2>Sports</h2>
+           
+        </div>
+
+        <div class="genre-card" onclick="openGenre('Astronomy')">
+            <h2>Astronomy</h2>
+           
+        </div>
+
+        <!-- Add more genre cards as needed -->
+    </main>
+
+    <script>
+        // Function to open a genre page
+        // function openGenre(genreName) {
+        //     // You can redirect the user to the genre-specific page or perform other actions.
+        //     // For now, we'll just display an alert.
+        //     alert(`Explore ${genreName}`);
+        // }
+        function openGenre(genreName) {
+    // Redirect to the respective genre page
+    window.location.href = `${genreName.toLowerCase()}.html`;
+       }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "music-player-master",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">",
+  "main": "dang.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  }
+}
