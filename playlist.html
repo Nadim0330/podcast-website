@@ -2,123 +2,112 @@
 <html>
 <head>
     <title>Podcast Playlist</title>
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--russian-violet);
+        }
+
+        h1 {
+            text-align: center;
+            color: whitesmoke;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 20px;
+            background-color: var(--russian-violet);
+        }
+
+        .playlist-container, .history-container {
+            flex: 1;
+            background-color: var(--russian-violet);
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        h2 {
+            font-size: 25px;
+            color: white;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="browse.html">Browse</a>
-        <a href="genre.html">Genre</a>
-    </div>
     <h1>Podcast Playlist</h1>
-    
-    <ul id="playlist">
-        <!-- Podcasts will be dynamically loaded from the JSON file -->
-    </ul>
+
+    <div class="container">
+        <div class="playlist-container">
+            <h2>Playlist</h2>
+            <ul id="playlist">
+                <li><a href="podcast1.mp3">Podcast 1</a></li>
+                <li><a href="podcast2.mp3">Podcast 2</a></li>
+                <li><a href="podcast3.mp3">Podcast 3</a></li>
+                <!-- Add more podcasts as needed -->
+            </ul>
+        </div>
+
+        <div class="history-container">
+            <h2>Listening History</h2>
+            <ul id="history">
+                <!-- Listening history will be displayed here -->
+            </ul>
+        </div>
+    </div>
 
     <audio controls id="audioPlayer">
-        <source src="episodes/episode1.mp3" type="audio/mpeg">
+        <source src="" type="audio/mpeg">
     </audio>
 
-    <h2>Listening History</h2>
-    <ul id="history">
-        <!-- Listening history will be displayed here -->
-    </ul>
     <script>
-    const playlist = document.querySelector('.playlist');
-        const audioPlayer = document.getElementById('audioPlayer');
-        const history = document.getElementById('history');
+        const playlist = document.getElementById("playlist");
+        const audioPlayer = document.getElementById("audioPlayer");
+        const history = document.getElementById("history");
 
-        // Sample episode data
-        let currentAudio = null; // Keep track of the currently playing audio element
-        const playedEpisodes = []; // Store played episodes in an array
-
-        // Function to load episode data from a JSON file
-        async function loadEpisodeData() {
-            try {
-                const response = await fetch('episode-data.json');
-                const data = await response.json();
-                return data.episodes;
-            } catch (error) {
-                console.error('Error loading episode data:', error);
-                return [];
+        playlist.addEventListener("click", (event) => {
+            if (event.target.tagName === "A") {
+                event.preventDefault();
+                const podcastFile = event.target.getAttribute("href");
+                audioPlayer.src = podcastFile;
+                audioPlayer.play();
+                addToHistory(event.target.textContent, podcastFile);
             }
-        }
-
-        // Function to display episodes
-        function displayEpisodes(episodes) {
-            playlist.innerHTML = ''; // Clear the current playlist
-
-            if (episodes.length === 0) {
-                playlist.innerHTML = 'No matching episodes found.';
-            } else {
-                episodes.forEach((episode, index) => {
-                    const li = document.createElement('li');
-                    li.className = 'episode';
-                    li.innerHTML = `
-                        <div class="episode-info">
-                            <h2>${episode.title}</h2>
-                            <p>${episode.description}</p>
-                        </div>
-                        <audio controls>
-                            <source src="${episode.audio}" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    `;
-                    playlist.appendChild(li);
-
-                    // Add event listener to play audio and update history
-                    const audio = li.querySelector('audio');
-                    audio.addEventListener('play', () => {
-                        if (currentAudio && currentAudio !== audio) {
-                            // Pause the previously playing audio if different
-                            currentAudio.pause();
-                        }
-                        currentAudio = audio;
-
-                        // Add the episode to the listening history
-                        addToHistory(episode.title);
-                    });
-                });
-            }
-        }
-
-        // Function to handle the search
-        function searchEpisodes(episodes, searchTerm) {
-            const results = episodes.filter(episode =>
-                episode.title.toLowerCase().includes(searchTerm) || episode.description.toLowerCase().includes(searchTerm)
-            );
-
-            displayEpisodes(results);
-        }
-
-        // Function to add an episode to the listening history
-        function addToHistory(episodeTitle) {
-            playedEpisodes.push(episodeTitle);
-            displayHistory();
-        }
-
-        // Function to display the listening history
-        function displayHistory() {
-            history.innerHTML = ''; // Clear the current history
-
-            playedEpisodes.forEach(episodeTitle => {
-                const historyItem = document.createElement('li');
-                historyItem.textContent = episodeTitle;
-                history.appendChild(historyItem);
-            });
-        }
-
-        // Add an event listener to the search button
-        document.getElementById('search-button').addEventListener('click', async () => {
-            const searchTerm = document.getElementById('search-input').value.toLowerCase();
-            const episodes = await loadEpisodeData();
-            searchEpisodes(episodes, searchTerm);
         });
 
-        // Load initial episodes
-        loadEpisodeData()
-            .then(episodes => displayEpisodes(episodes))
-            .catch(error => console.error('Error loading episodes:', error));
+        function addToHistory(podcastTitle, podcastFile) {
+            const historyItem = document.createElement("li");
+            const historyLink = document.createElement("a");
+            historyLink.href = podcastFile;
+            historyLink.textContent = podcastTitle;
+            historyItem.appendChild(historyLink);
+            history.appendChild(historyItem);
+        }
     </script>
 </body>
 </html>

@@ -66,10 +66,13 @@
           <li class="navbar-item">
             <a href="contact.html" class="navbar-link">Contact</a>
           </li>
-
           <li class="navbar-item">
-            <a href="Login-register.html" class="navbar-link">Login</a>
+            <a href="playlist.html" class="navbar-link">Playlist</a>
           </li>
+
+          <!-- <li class="navbar-item">
+            <a href="Login-register.html" class="navbar-link">Login</a>
+          </li> -->
 
         </ul>
 
@@ -166,36 +169,35 @@
         <ul class="podcast-list">
 
           <li>
-            <a href="#" class="podcast-card">
-
+            <a class="podcast-card">
               <figure class="card-banner">
                 <img src="./assets/images/podcast-1.png" alt="Tube Preamps, TLM103 vs. OJ 818, Podcastage's Beanies">
-
-                <div class="card-banner-icon">
+                <div class="card-banner-icon" id="play-button">
                   <ion-icon name="play"></ion-icon>
                 </div>
               </figure>
-
               <div class="card-content">
                 <div class="card-meta">
                   <time datetime="2022-02-15">Feb 15, 2022</time>
-
                   <p class="pod-epi">Episodes: 01</p>
                 </div>
-
                 <h3 class="h3 card-title">Tube Preamps, TLM103 vs. OJ 818, Podcastage's Beanies</h3>
+                <audio controls id="audio-player">
+                  <source src="episodes/episode1.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
               </div>
-
             </a>
+            
           </li>
 
           <li>
-            <a href="#" class="podcast-card">
+            <a class="podcast-card">
 
               <figure class="card-banner">
                 <img src="./assets/images/podcast-2.png" alt="Ask Unladylike: Late Bloomer with Forever 35">
 
-                <div class="card-banner-icon">
+                <div class="card-banner-icon" id="play-button">
                   <ion-icon name="play"></ion-icon>
                 </div>
               </figure>
@@ -208,13 +210,17 @@
                 </div>
 
                 <h3 class="h3 card-title">Ask Unladylike: Late Bloomer with Forever 35</h3>
+                <audio controls id="audio-player">
+                  <source src="episodes/episode1.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
               </div>
 
             </a>
           </li>
 
           <li>
-            <a href="#" class="podcast-card">
+            <a class="podcast-card">
 
               <figure class="card-banner">
                 <img src="./assets/images/podcast-3.png" alt="How to Effectively Incentivize Team Members">
@@ -232,13 +238,17 @@
                 </div>
 
                 <h3 class="h3 card-title">How to Effectively Incentivize Team Members</h3>
+                <audio controls id="audio-player">
+                  <source src="episodes/episode1.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
               </div>
 
             </a>
           </li>
 
           <li>
-            <a href="#" class="podcast-card">
+            <a class="podcast-card">
 
               <figure class="card-banner">
                 <img src="./assets/images/podcast-4.png" alt="How to go from Start-Up to Scale-Up">
@@ -256,13 +266,17 @@
                 </div>
 
                 <h3 class="h3 card-title">How to go from Start-Up to Scale-Up</h3>
+                <audio controls id="audio-player">
+                  <source src="episodes/episode1.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
               </div>
 
             </a>
           </li>
 
           <li>
-            <a href="#" class="podcast-card">
+            <a class="podcast-card">
 
               <figure class="card-banner">
                 <img src="./assets/images/podcast-5.png" alt="Deadbuttons – Tired of You | Live at Club Heavy">
@@ -280,13 +294,17 @@
                 </div>
 
                 <h3 class="h3 card-title">Deadbuttons – Tired of You | Live at Club Heavy</h3>
+                <audio controls id="audio-player">
+                  <source src="episodes/episode1.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
               </div>
 
             </a>
           </li>
 
           <li>
-            <a href="#" class="podcast-card">
+            <a class="podcast-card">
 
               <figure class="card-banner">
                 <img src="./assets/images/podcast-6.png" alt="Boogie Through the Universe with SOWO">
@@ -304,13 +322,17 @@
                 </div>
 
                 <h3 class="h3 card-title">Boogie Through the Universe with SOWO</h3>
+                <audio controls id="audio-player">
+                  <source src="episodes/episode1.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
               </div>
 
             </a>
           </li>
 
           <li>
-            <a href="#" class="podcast-card">
+            <a class="podcast-card">
 
               <figure class="card-banner">
                 <img src="./assets/images/podcast-7.png" alt="Glittering Blackness, Fall – 4 | Live at Club Heavy">
@@ -328,13 +350,17 @@
                 </div>
 
                 <h3 class="h3 card-title">Glittering Blackness, Fall – 4 | Live at Club Heavy</h3>
+                <audio controls id="audio-player">
+                  <source src="episodes/episode1.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
               </div>
 
             </a>
           </li>
 
           <li>
-            <a href="#" class="podcast-card">
+            <a class="podcast-card">
 
               <figure class="card-banner">
                 <img src="./assets/images/podcast-8.png" alt="The Meditative Photos of Chaelinjane">
@@ -352,6 +378,10 @@
                 </div>
 
                 <h3 class="h3 card-title">The Meditative Photos of Chaelinjane</h3>
+                <audio controls id="audio-player">
+                  <source src="episodes/episode1.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
               </div>
 
             </a>
@@ -421,11 +451,11 @@
           </li>
 
           <li>
-            <a href="mailto:hello@micro.com" class="footer-link">hello@micro.com</a>
+            <a href="mailto:rajputyk031@gmail.com" class="footer-link">rajputyk031</a>
           </li>
 
           <li>
-            <a href="tel:+0123454678" class="footer-link">+01234 54678</a>
+            <a href="9172190743" class="footer-link">+9172190743</a>
           </li>
 
           <li>
@@ -494,7 +524,17 @@
   </a>
 
 
+<script>
+  document.getElementById('play-button').addEventListener('click', function() {
+  var audioPlayer = document.getElementById('audio-player');
+  if (audioPlayer.paused) {
+    audioPlayer.play();
+  } else {
+    audioPlayer.pause();
+  }
+});
 
+</script>
 
 
   <!-- 
