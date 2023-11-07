@@ -1,19 +1,15 @@
 <div align="center">
   
-  ![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/music-player)
-  ![GitHub stars](https://img.shields.io/github/stars/codewithsadee/music-player?style=social)
-  ![GitHub forks](https://img.shields.io/github/forks/codewithsadee/music-player?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
-  [![YouTube Video Views](https://img.shields.io/youtube/views/jbMd2NVFrZk?style=social)](https://youtu.be/jbMd2NVFrZk)
+  ![GitHub repo size](https://img.shields.io/github/repo-size/Nadim0330/podcast-website)
+  ![GitHub stars](https://img.shields.io/github/stars/Nadim0330/podcast-website?style=social)
+  ![GitHub forks](https://img.shields.io/github/forks/Nadim0330/podcast-website?style=social)
 
   <br />
   <br />
 
-  <h2 align="center">Web Music Player</h2>
+  <h2 align="center">Web Podcast Player</h2>
 
-  A fully responsive web music player using vanilla javascript, <br />Responsive for all devices, build using html, css, and javascript.
-
-  <a href="https://codewithsadee.github.io/music-player/"><strong>➥ Live Demo</strong></a>
+  A fully responsive web  podcast player using javascript, <br />Responsive for all devices, build using html, css, and javascript.
 
 </div>
 
@@ -23,31 +19,9 @@
 
 ![Music Player Desktop Demo](./readme-images/desktop.png "Desktop Demo")
 
-### Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-
-* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
-
-### Run Locally
-
-To run **Music Player** locally, run this command on your git bash:
-
-Linux and macOS:
-
-```bash
-sudo git clone https://github.com/codewithsadee/music-player.git
-```
-
-Windows:
-
-```bash
-git clone https://github.com/codewithsadee/music-player.git
-```
-
 ### Contact
 
-If you want to contact with me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
+If you want to contact with me you can reach me at [[Linkedin](https://www.linkedin.com/in/nadimshaikh/)]
 
 ### License
 
