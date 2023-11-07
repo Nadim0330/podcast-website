@@ -17,7 +17,15 @@
 
 ### Demo Screeshots
 
-![Music Player Desktop Demo](./readme-images/desktop.png "Desktop Demo")
+![Podcast Player Login Demo](./readme-images/login.png "login Demo")
+![Podcast Player Demo](./readme-images/image(9).png "Dashboard Demo")
+![Podcast Player Demo](./readme-images/image(10).png "-")
+![Podcast Player Demo](./readme-images/image(11).png "-")
+![Podcast Player Demo](./readme-images/image(12).png "-")
+![Podcast Player Demo](./readme-images/image(13).png "-")
+![Podcast Player Demo](./readme-images/image(14).png "-")
+![Podcast Player Demo](./readme-images/image(15).png "-")
+![Podcast Player Demo](./readme-images/image(16).png "-")
 
 ### Contact
 
